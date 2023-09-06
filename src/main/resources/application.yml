@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.1.139:5432/nyc
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 25000
+      login-timeout: 5
+      max-lifetime: 30000
+      read-only: false
+      validation-timeout: 3000
+      maximum-pool-size: 8
+      minimum-idle: 8
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+        useLocalSessionState: true
+        rewriteBatchedStatements: true
+        cacheResultSetMetadata: true
+        cacheServerConfiguration: true
+        elideSetAutoCommits: true
+        maintainTimeStats: false
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: input
+      update-strategy: not_empty
+    banner: false
+  type-aliases-package: org.example.postgis
+  type-handlers-package: org.example.postgis
+server:
+  port: 89
+  servlet:
+    context-path: /agr-api
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+logging:
+  config: classpath:log4j2.xml
