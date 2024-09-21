@@ -1,9 +1,9 @@
 spring:
   datasource:
     username: postgres
-    password: 123456
+    password: qf123456
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://192.168.1.139:5432/nyc
+    url: jdbc:postgresql://localhost:5432/newyork
     hikari:
       connection-timeout: 30000
       idle-timeout: 25000
@@ -32,7 +32,7 @@ mybatis-plus:
       update-strategy: not_empty
     banner: false
   type-aliases-package: org.example.postgis
-  type-handlers-package: org.example.postgis
+  # type-handlers-package: org.example.postgis
 server:
   port: 89
   servlet:

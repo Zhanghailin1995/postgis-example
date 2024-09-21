@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
-@TableName("plot_data_test")
+@TableName(value = "plot_data_test", autoResultMap = true)
 public class PlotData {
 
     @TableId
